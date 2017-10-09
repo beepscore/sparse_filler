@@ -2,7 +2,11 @@
 
 
 def filled(line):
-    return line[:7]
+    """
+    :param line: a string representing a line in the input file
+    :return: a list starting with 0,1,or 2 and then filled with 0 or 1
+    """
+    return [0, 0, 1]
 
 
 def write_filled(input_filename, output_filename):
@@ -12,8 +16,9 @@ def write_filled(input_filename, output_filename):
 
         with open(input_filename) as lines:
             for line in lines:
-                result = filled(line)
-                output_file.write(result)
+                filled_list = filled(line)
+                filled_string = " ".join(str(x) for x in filled_list)
+                output_file.write(filled_string)
                 output_file.write('\n')
 
 
