@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
 
+def filled(line):
+    return line[:7]
+
+
 def write_filled(input_filename, output_filename):
     # https://stackoverflow.com/questions/8009882/how-to-read-large-file-line-by-line-in-python#8010133
 
@@ -8,7 +12,8 @@ def write_filled(input_filename, output_filename):
 
         with open(input_filename) as lines:
             for line in lines:
-                output_file.write(line[0:7])
+                result = filled(line)
+                output_file.write(result)
                 output_file.write('\n')
 
 
