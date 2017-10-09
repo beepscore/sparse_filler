@@ -2,6 +2,7 @@
 # https://github.com/github/gitignore
 # http://help.github.com/ignore-files/
 
+.svn
 .ropeproject
 
 #######################################
@@ -115,3 +116,20 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
+
+# virtual environment files
+venv/*
+
+# program data files
+data/*
+
+# text files
+*.txt
+!requirements.txt
+
+# csv files
+*.csv
+
+# excel files
+#*.xls
+#*.xlsx
