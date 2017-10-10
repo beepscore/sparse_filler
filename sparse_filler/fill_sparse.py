@@ -41,10 +41,10 @@ def filled(line):
 
     filled_list.append(int_element_zero(input_list))
 
-    row_list_tail = input_list[1:]
+    input_list_tail = input_list[1:]
     element_int_previous = 0
 
-    for string_with_colon in row_list_tail:
+    for string_with_colon in input_list_tail:
 
         element_int = int_before_colon(string_with_colon)
 
