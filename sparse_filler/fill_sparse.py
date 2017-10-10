@@ -23,17 +23,23 @@ def int_element_zero(line_list):
 def int_before_colon(string_with_colon):
     """
     :param string_with_colon: a string with a colon e.g. '3:1'
-    :return: an int e.g. 3
+    :return: an int e.g. 3. return None if no colon
     """
-    return int(string_with_colon.split(':')[0])
+    if ':' not in string_with_colon:
+        return None
+    else:
+        return int(string_with_colon.split(':')[0])
 
 
 def int_after_colon(string_with_colon):
     """
     :param string_with_colon: a string with a colon e.g. '3:1'
-    :return: an int e.g. 1
+    :return: an int e.g. 1. return None if no colon
     """
-    return int(string_with_colon.split(':')[1])
+    if ':' not in string_with_colon:
+        return None
+    else:
+        return int(string_with_colon.split(':')[1])
 
 
 def filled(line):
