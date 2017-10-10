@@ -4,7 +4,7 @@
 def line_list(line):
     """
     :param line: a string representing a line in the input file
-    e.g. ['2 3:1 7:1']
+    e.g. '2 3:1 7:1'
     :return: a list of elements
     e.g. ['2', '3:1', '7:1']
     """
@@ -12,12 +12,12 @@ def line_list(line):
     return input_row_list
 
 
-def int_element_zero(input_row_list):
+def int_element_zero(line_list):
     """
-    :param row_list: a list of strings, e.g. ['2', '3:1, '7:1']
+    :param line_list: a list of strings, e.g. ['2', '3:1, '7:1']
     :return: an int from the first string element, e.g. 2
     """
-    return int(input_row_list[0])
+    return int(line_list[0])
 
 
 def int_before_colon(string_with_colon):
