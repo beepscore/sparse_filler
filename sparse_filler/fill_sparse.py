@@ -73,6 +73,6 @@ def list_of_lists(input_filename):
     return nested_list
 
 
-input_filename = "../data/input.txt"
+input_filename = "../data/test_input0.txt"
 vectors = list_of_lists(input_filename)
 print('vectors', vectors)
