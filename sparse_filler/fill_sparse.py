@@ -44,13 +44,14 @@ def int_after_colon(string_with_colon):
 
 def filled(line):
     """
-    This method assumes int_before_colon always increases.
+    This method assumes int_before_colon in string_with_colon is sorted ascending.
     :param line: a string representing a line in the input file
     the line starts with 0, 1, or 2
     e.g. '2 3:1 7:1'
     :return: a list starting with 0, 1, or 2 and then filled with 0 or 1.
     e.g. fill column 1 and 2 with 0, column 3 with 1, column 4, 5, 6 with 0, column 7 with 1.
     [2, 0, 0, 1, 0, 0, 0, 1]
+    return None if int_before_colon in string_with_colon is not sorted ascending
     """
     input_list = line_list(line)
 
@@ -66,6 +67,11 @@ def filled(line):
         element_int = int_before_colon(string_with_colon)
 
         number_of_zeroes = (element_int - element_int_previous) - 1
+
+        if number_of_zeroes < 0:
+            # bad input, int_before_colon is not sorted ascending
+            return None
+
         for index in range(0, number_of_zeroes):
             filled_list.append(0)
 
