@@ -9,6 +9,7 @@ class TestSparseFiller(unittest.TestCase):
 
     def test_int_element_zero(self):
         self.assertEqual(fill_sparse.int_element_zero(['2', '5:1', '8:1']), 2)
+        self.assertEqual(fill_sparse.int_element_zero('0 2:1 5:1 7:1'), 0)
 
     def test_int_before_colon(self):
         self.assertEqual(fill_sparse.int_before_colon('5:1'), 5)
