@@ -122,10 +122,12 @@ venv/*
 
 # program data files
 data/*
+!test_input0.txt
+!test_input1.txt
 
 # text files
-*.txt
-!requirements.txt
+# *.txt
+# !requirements.txt
 
 # csv files
 *.csv
