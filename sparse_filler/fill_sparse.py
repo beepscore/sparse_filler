@@ -28,6 +28,14 @@ def int_before_colon(string_with_colon):
     return int(string_with_colon.split(':')[0])
 
 
+def int_after_colon(string_with_colon):
+    """
+    :param string_with_colon: a string with a colon e.g. '3:1'
+    :return: an int e.g. 1
+    """
+    return int(string_with_colon.split(':')[1])
+
+
 def filled(line):
     """
     :param line: a string representing a line in the input file
@@ -54,7 +62,7 @@ def filled(line):
         for index in range(0, number_of_zeroes):
             filled_list.append(0)
 
-        filled_list.append(1)
+        filled_list.append(int_after_colon(string_with_colon))
 
         # remember for next iteration
         element_int_previous = element_int
