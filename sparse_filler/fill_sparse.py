@@ -63,10 +63,22 @@ def filled(line):
 
 
 def list_of_lists(input_filename):
-    # https://stackoverflow.com/questions/8009882/how-to-read-large-file-line-by-line-in-python#8010133
+    """ Convert each line in the input file to a list.
+    Fill implied column values with 0.
+    :param input_filename: a text file that compactly represents sparse data
+    e.g.
+        1 2:1 3:1 7:1 10:1
+        2 5:1 8:1
+        0 2:1 5:1 7:1
+    :return: an expanded representation, a list of line lists.
+    e.g.
+       [[1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1], [2, 0, 0, 0, 0, 1, 0, 0, 1], [0, 0, 1, 0, 0, 1, 0, 1]]
+    """
 
     nested_list = []
 
+    # read / write line by line can reduce memory use.
+    # https://stackoverflow.com/questions/8009882/how-to-read-large-file-line-by-line-in-python#8010133
     with open(input_filename) as lines:
         for line in lines:
             filled_row = filled(line)
