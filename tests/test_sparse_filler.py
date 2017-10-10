@@ -18,3 +18,8 @@ class TestSparseFiller(unittest.TestCase):
         self.assertEqual(fill_sparse.filled('1 2:1 3:1 7:1 10:1'), [1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1])
         self.assertEqual(fill_sparse.filled('2 5:1 8:1'), [2, 0, 0, 0, 0, 1, 0, 0, 1])
         self.assertEqual(fill_sparse.filled('0 2:1 5:1 7:1'), [0, 0, 1, 0, 0, 1, 0, 1])
+
+    def test_list_of_lists(self):
+        input_filename = "../data/test_input1.txt"
+        expected = [[1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1], [2, 0, 0, 0, 0, 1, 0, 0, 1], [0, 0, 1, 0, 0, 1, 0, 1], [2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1]]
+        self.assertEqual(fill_sparse.list_of_lists(input_filename), expected)
