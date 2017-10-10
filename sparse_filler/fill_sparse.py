@@ -20,15 +20,33 @@ def int_element_zero(line_list):
     return int(line_list[0])
 
 
+def ints_from_string_with_colon(string_with_colon):
+    """
+    :param string_with_colon: a string with a colon e.g. '3:1'
+    :return: a list of ints e.g. [3, 1]. return None if no colon or len(list) is not 2
+    """
+    if ':' not in string_with_colon:
+        # bad input
+        return None
+    else:
+        int_strings = string_with_colon.split(':')
+        if len(int_strings) is not 2:
+            # bad input
+            return None
+        else:
+            return [int(int_string) for int_string in int_strings]
+
+
 def int_before_colon(string_with_colon):
     """
     :param string_with_colon: a string with a colon e.g. '3:1'
     :return: an int e.g. 3. return None if no colon
     """
-    if ':' not in string_with_colon:
+    ints = ints_from_string_with_colon(string_with_colon)
+    if ints is None:
         return None
     else:
-        return int(string_with_colon.split(':')[0])
+        return ints[0]
 
 
 def int_after_colon(string_with_colon):
@@ -36,10 +54,11 @@ def int_after_colon(string_with_colon):
     :param string_with_colon: a string with a colon e.g. '3:1'
     :return: an int e.g. 1. return None if no colon
     """
-    if ':' not in string_with_colon:
+    ints = ints_from_string_with_colon(string_with_colon)
+    if ints is None:
         return None
     else:
-        return int(string_with_colon.split(':')[1])
+        return ints[1]
 
 
 def filled(line):

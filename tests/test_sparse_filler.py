@@ -11,6 +11,15 @@ class TestSparseFiller(unittest.TestCase):
         self.assertEqual(fill_sparse.int_element_zero(['2', '5:1', '8:1']), 2)
         self.assertEqual(fill_sparse.int_element_zero('0 2:1 5:1 7:1'), 0)
 
+    def test_ints_from_string_with_colon(self):
+        self.assertEqual(fill_sparse.ints_from_string_with_colon('5:1'), [5, 1])
+
+    def test_ints_from_string_with_colon_no_colon(self):
+        self.assertEqual(fill_sparse.ints_from_string_with_colon('51'), None)
+
+    def test_ints_from_string_with_colon_too_many_ints(self):
+        self.assertEqual(fill_sparse.ints_from_string_with_colon('5:1:3'), None)
+
     def test_int_before_colon(self):
         self.assertEqual(fill_sparse.int_before_colon('5:1'), 5)
 
