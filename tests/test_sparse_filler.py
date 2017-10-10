@@ -25,6 +25,9 @@ class TestSparseFiller(unittest.TestCase):
         self.assertEqual(fill_sparse.filled('2 5:1 8:1'), [2, 0, 0, 0, 0, 1, 0, 0, 1])
         self.assertEqual(fill_sparse.filled('0 2:1 5:1 7:1'), [0, 0, 1, 0, 0, 1, 0, 1])
 
+    def test_filled_int_before_colon_not_sorted_ascending(self):
+        self.assertEqual(fill_sparse.filled('1 5:1 3:1'), None)
+
     def test_list_of_lists(self):
         input_filename = "../data/test_input1.txt"
         expected = [[1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1], [2, 0, 0, 0, 0, 1, 0, 0, 1], [0, 0, 1, 0, 0, 1, 0, 1], [2, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1]]
