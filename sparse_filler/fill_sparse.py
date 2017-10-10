@@ -14,7 +14,7 @@ def line_list(line):
 
 def int_element_zero(line_list):
     """
-    :param line_list: a list of strings, e.g. ['2', '3:1, '7:1']
+    :param line_list: a list of strings, e.g. ['2', '3:1', '7:1']
     :return: an int from the first string element, e.g. 2
     """
     return int(line_list[0])
