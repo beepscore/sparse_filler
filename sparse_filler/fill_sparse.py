@@ -44,6 +44,7 @@ def int_after_colon(string_with_colon):
 
 def filled(line):
     """
+    This method assumes int_before_colon always increases.
     :param line: a string representing a line in the input file
     the line starts with 0, 1, or 2
     e.g. '2 3:1 7:1'
