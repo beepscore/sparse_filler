@@ -31,8 +31,8 @@ def int_before_colon(string_with_colon):
 def filled(line):
     """
     :param line: a string representing a line in the input file
-    e.g. ['1 3:1 7:1']
-    :return: a list starting with 0,1,or 2 and then filled with 0 or 1
+    e.g. ['2 3:1 7:1']
+    :return: a list starting with 0, 1, or 2 and then filled with 0 or 1
     e.g. [2, 0, 0, 1, 0, 0, 0, 1]
     """
     input_list = line_list(line)
